@@ -1,0 +1,28 @@
+{
+  "name": "ytmp3",
+  "version": "1.0.0",
+  "description": "Website for convert/download YouTube video to MP3",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Keito-Klein/1001-mp3.git"
+  },
+  "keywords": [
+    "1001-mp3",
+    "mp3",
+    "ytmp3"
+  ],
+  "author": "MiKako",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Keito-Klein/1001-mp3/issues"
+  },
+  "homepage": "https://github.com/Keito-Klein/1001-mp3#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2"
+  }
+}
