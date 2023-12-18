@@ -6,10 +6,11 @@ const port = 3000
 //Using View Engine ejs
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
+app.use(express.static('public'));
 
 //get Root address
 app.get('/', (req, res) => {
-	res.render("root",
+	res.render("main",
 		{ title: "1001-mp3",
 		  layout: "layout/main-layout"
 		});
