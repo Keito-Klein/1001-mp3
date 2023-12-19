@@ -61,17 +61,22 @@ header {
     align-items: center;
 }
 
-
-.container input {
+.container form {
     position: absolute;
+}
+
+.container form input {
+    position: relative;
     border: 2px solid skyblue;
     border-radius: 1em;
+    width: 590px;
     padding: 0 10px;
     height: 2em;
     font-weight: 500;
     font-size: 1.5em;
-    transition: 0.8s;
+    text-align: center;
 }
+
 
 
 

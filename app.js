@@ -1,12 +1,19 @@
 const express = require("express");
-const expressLayouts = require("express-ejs-layouts")
+const expressLayouts = require("express-ejs-layouts");
+const { jsDOM } = require("jsdom");
+const ejs = require("ejs");
+const fs = require("fs");
+// const ytdl = require("./lib/yt.js")
 const app = express()
 const port = 3000
 
-//Using View Engine ejs
+//Using Middleware
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true}))
+
+
 
 //get Root address
 app.get('/', (req, res) => {
@@ -16,6 +23,12 @@ app.get('/', (req, res) => {
 		});
 })
 
+//Catch request from user
+app.post('/', (req, res) => {
+	const inputData = req.body.link
+	console.log("input:", inputData.trim())
+
+})
 
 app.use('/', (req, res) => {
 	res.status(404)
