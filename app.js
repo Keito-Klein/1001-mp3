@@ -1,9 +1,10 @@
+//NPM Package
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const { jsDOM } = require("jsdom");
 const ejs = require("ejs");
 const fs = require("fs");
-// const ytdl = require("./lib/yt.js")
+const { getAudio, getInfo } = require("./lib/yt.js");
 const app = express()
 const port = 3000
 
@@ -26,14 +27,15 @@ app.get('/', (req, res) => {
 //Catch request from user
 app.post('/', (req, res) => {
 	const inputData = req.body.link
-	console.log("input:", inputData.trim())
-
+	getAudio(inputData.trim())
 })
 
+//Catch Page not Found
 app.use('/', (req, res) => {
 	res.status(404)
 	res.send('<h1> 404 </h1>')
 })
+
 
 app.listen(port, () => {
  console.log("System Uptime!");
